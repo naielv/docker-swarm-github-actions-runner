@@ -16,10 +16,9 @@ services:
       CONFIGS: 1
 
   runner:
-    build:
-      context: .
-    env_file: .env
+    image: ghcr.io/naielv/docker-swarm-github-actions-runner:master
     environment:
+      ORGANIZATION: EuskadiTech
       DOCKER_HOST: socket:2375
       ACCESS_TOKEN_FILE: /run/secrets/github_access-token
 
